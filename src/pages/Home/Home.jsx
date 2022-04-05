@@ -1,18 +1,8 @@
-import React, { useContext } from 'react';
-import StoreContext from '../../Store/Context';
-import './Home.css';
+import React from 'react';
+import UserHome from '../../components/User/Home/Home.jsx';
 
-const PagesHome = () => {
-  const { setToken } = useContext(StoreContext);
-  return (
-    <div className="pages-home">
-      foi :)
-      <br />
-      <button type="button" onClick={() => setToken(null)}>
-        Sair
-      </button>
-    </div>
-  );
-};
+const PagesHome = () => (
+  <UserHome />
+);
 
 export default PagesHome;

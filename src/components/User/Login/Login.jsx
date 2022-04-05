@@ -13,7 +13,6 @@ function initialState() {
 async function login({email, password}) {
   const result = await instance.post('/authenticate',{email, password})
   if (result.data.auth_token) {
-    console.log('gg');
     return { authToken: result.data.auth_token } 
   }
   return { error: 'Unauthorized' }
@@ -40,9 +39,6 @@ const UserLogin = () => {
 
     const { authToken, error } = await login(values);
 
-  console.log('----');
-  console.log(authToken);
-  console.log(error);
     if(authToken) {
       setToken(authToken);
       return history.push('/');
